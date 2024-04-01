@@ -1,0 +1,21 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+@{ 
+    var dados = (ViewBag.Erros as IEnumerable<string>);
+    Console.WriteLine("sd");
+    var x = dados.ToArray();
+}
+
+<script type="text/javascript">
+
+    var resultErros = 0;
+    
+    console.log(resultErros);
+
+    $.each(resultErros, function (index, value) {
+        MostrarAlertMensagemErro(value)
+    });
+</script>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Obras";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <h6 class="titulo-lista">Listar Obras</h6>
+                    <span style="font-style:italic; font-size:14px">(base de calculo das diarias: 25 dias)</span>
+                    <button class="btn btn-primary float-end" onclick="ModalObra()">Cadastrar</button>
+                </div>
+                <div class="card-body px-0 pt-0 pb-2">
+                    <div id="divListar" class="table-responsive p-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Obra -->
+<partial name="ModalFormulario" >
+
+<script src="~/js/Pages/Obra/index.js" asp-append-version="true"></script>
+<script src="~/js/Pages/Obra/salvar.js" asp-append-version="true"></script>
+<script src="~/js/Pages/Obra/excluir.js" asp-append-version="true"></script>

@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\NotMapped\**" />
+    <EmbeddedResource Remove="Models\NotMapped\**" />
+    <None Remove="Models\NotMapped\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+    <PackageReference Include="Effortless.Net.Encryption" Version="4.0.0" />
+    <PackageReference Include="NETCore.Encrypt" Version="2.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdministrativoImperial.Common\AdministrativoImperial.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Gpnet.Common.ExecutionManager">
+      <HintPath>..\AdministrativoImperial.Library\dlls\Gpnet.Common.ExecutionManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

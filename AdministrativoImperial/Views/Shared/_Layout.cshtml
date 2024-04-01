@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="~/img/logo-sem-fundo.png">
+    <title>@ViewData["Title"] - Administrativo Imperial</title>
+
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+
+    <!-- Nucleo Icons -->
+    <link href="~/criativeTim/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/criativeTim/css/nucleo-svg.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+
+    <!-- Notifications -->
+    <link href="~/lib/sh-toastr-master/css/sh_toaster.css" rel="stylesheet" />
+
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/criativeTim/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site_layout_menu.css" />
+
+    <!-- JS Script -->
+    <script src="~/lib/jquery/dist/jquery.js" asp-append-version="true"></script>
+
+</head>
+
+<body class="g-sidenav-show bg-gray-100">
+    <div id="loader">
+        <div class="spinner-grow text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div id="notificacoes">
+        <div class="sh-toast-container" id="shToastContainerTop"></div>
+        <div class="sh-toast-container" id="shToastContainerBottom"></div>
+    </div>
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+
+    <div class='dashboard'>
+        <div class="dashboard-nav bg-primary">
+            <header>
+                <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#" class="brand-logo">
+                    <span>Imperial</span>
+                </a>
+            </header>
+            <nav class="dashboard-nav-list">
+                @* <a asp-controller="Dashboard" asp-action="Index" class="dashboard-nav-item active"><i class="fa fa-bar-chart"></i>Dashboard</a> *@
+                <a asp-controller="Obra" asp-action="Index" class="dashboard-nav-item"><i class="fa-solid fa-person-digging"></i> Obra</a>
+
+                @* <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa fa-money"></i> Receita
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a href="#"
+                           class="dashboard-nav-dropdown-item">All</a><a href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#" class="dashboard-nav-dropdown-item">Images</a><a href="#" class="dashboard-nav-dropdown-item">Video</a> 
+                    </div>
+                </div> *@
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle">
+                        <i class="fa fa-credit-card"></i> Despesas
+                    </a>
+                    <div class='dashboard-nav-dropdown-menu'>
+                        <a asp-controller="DiasTrabalhados" asp-action="Index" class="dashboard-nav-dropdown-item">Dias trabalhados</a>
+                        @* <a asp-controller="Material" asp-action="Index" class="dashboard-nav-dropdown-item">Materiais</a> *@
+                    </div>
+                </div>
+
+                <a asp-controller="Funcionario" asp-action="Index" class="dashboard-nav-item"><i class="fa fa-users"></i> Funcionários </a>
+                <a asp-controller="FuncaoFuncionario" asp-action="Index" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Função Funcionários </a>
+                @* <a asp-controller="Usuario" asp-action="Index" class="dashboard-nav-item"><i class="fa-solid fa-users-gear"></i> Usuários </a> *@
+                <div class="nav-item-divider"></div>
+                @* <a href="#" class="dashboard-nav-item" onclick="MensagemAvisoManutenção()"><i class="fas fa-user"></i> Perfil </a> *@
+                <a asp-controller="Login" asp-action="Index" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+            </nav>
+        </div>
+        <div class='dashboard-app'>
+            <header class='dashboard-toolbar bg-primary'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+            <div class='dashboard-content'>
+
+                <main role="main" class="main-content position-relative border-radius-lg ps">
+                    @RenderBody()
+
+                    <footer class="border-top footer text-muted mt-5">
+                        <div class="dashboard-content">
+                            &copy; 2024 - AdministrativoImperial
+                        </div>
+                    </footer>
+                </main>
+
+            </div>
+        </div>
+    </div>
+
+    <!--   JS Files Criative Tim   -->
+    <script src="~/criativeTim/js/core/popper.min.js"></script>
+    <script src="~/criativeTim/js/core/bootstrap.min.js"></script>
+    <script src="~/criativeTim/js/plugin/perfect-scrollbar.min.js"></script>
+    <script src="~/criativeTim/js/plugin/smooth-scrollbar.min.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+    </script>
+    
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="~/criativeTim/js/argon-dashboard.min.js?v=2.0.2"></script>
+
+    <!--  JS Files   -->
+    <script src="~/js/jquery.mask.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site_layout_menu.js" asp-append-version="true"></script>
+    <script src="~/js/utilities.js" asp-append-version="true"></script>
+    <script src="~/lib/sweetalert/sweetalert.min.js" asp-append-version="true"></script>
+    <script src="~/lib/sh-toastr-master/js/sh_toaster.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

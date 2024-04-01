@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\202309191035_CREATE_TABLE_FUNCAO_FUNCIONARIO_E_TABLE_FUNCIONARIO.sql" />
+    <None Remove="Scripts\202309191036_CREATE_TABLE_OBRA.sql" />
+    <None Remove="Scripts\202310110957_CREATE_TABLE_MATERIAL.sql" />
+    <None Remove="Scripts\202310191655_CREATE_TABLE_USUARIO.sql" />
+    <None Remove="Scripts\202401160638_CREATE_TABLE_DIA_TRABALHADO.sql" />
+    <None Remove="Scripts\202401170658_DROP_COLUMN_FUN_ID_TB_DIA_TRABALHADO.sql" />
+    <None Remove="Scripts\202401171042_CREATE_TABLE_DIA_TRABALHADO_FUNCIONARIO.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\202401171042_CREATE_TABLE_DIA_TRABALHADO_FUNCIONARIO.sql" />
+    <EmbeddedResource Include="Scripts\202401170658_DROP_COLUMN_FUN_ID_TB_DIA_TRABALHADO.sql" />
+    <EmbeddedResource Include="Scripts\202401160638_CREATE_TABLE_DIA_TRABALHADO.sql" />
+    <EmbeddedResource Include="Scripts\202310110957_CREATE_TABLE_MATERIAL.sql" />
+    <EmbeddedResource Include="Scripts\202309191036_CREATE_TABLE_OBRA.sql" />
+    <EmbeddedResource Include="Scripts\202309191035_CREATE_TABLE_FUNCAO_FUNCIONARIO_E_TABLE_FUNCIONARIO.sql" />
+    <EmbeddedResource Include="Scripts\202310191655_CREATE_TABLE_USUARIO.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup" Version="4.5.0" />
+    <PackageReference Include="dbup-sqlserver" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdministrativoImperial.Common\AdministrativoImperial.Common.csproj" />
+    <ProjectReference Include="..\AdministrativoImperial.Domain\AdministrativoImperial.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

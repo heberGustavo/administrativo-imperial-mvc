@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Funcionários";
+}
+
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header pb-0">
+                    <h6 class="titulo-lista">Listar Função de Funcionários</h6>
+                    <button class="btn btn-primary float-end" onclick="ModalFuncao()">Cadastrar</button>
+                </div>
+                <div class="card-body px-0 pt-0 pb-2">
+                    <div id="divListar" class="table-responsive p-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Função Funcionarios -->
+<partial name="ModalFormulario" />
+
+<script src="~/js/Pages/FuncaoFuncionario/index.js" asp-append-version="true"></script>
+<script src="~/js/Pages/FuncaoFuncionario/salvar.js" asp-append-version="true"></script>
+<script src="~/js/Pages/FuncaoFuncionario/excluir.js" asp-append-version="true"></script>
