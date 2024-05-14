@@ -5,3 +5,5 @@ This system is used to control the expenses. Where you can register employee, pl
 
 This project was developed using .NET, Dapper, SQL Server, Bootstrap and jQuery.
 
+### Connection String
+You must access the file which is located at: 0-Portal -> appsettings.json -> CONNECTION_STRING and CONNECTION_STRING_DEBUG
