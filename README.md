@@ -81,7 +81,7 @@ $ git clone https://github.com/heberGustavo/administrativo-imperial.git
   4.1 - Portal > AdministrativoImperial.Portal > appsettings.json
   4.2 - Modify the value to "CONNECTION_STRING" and "CONNECTION_STRING_DEBUG"
 
-# 6. Run the application
+# 5. Run the application
 
 ```
 
