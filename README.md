@@ -81,6 +81,7 @@ $ git clone https://github.com/heberGustavo/administrativo-imperial.git
   4.1 - Portal > AdministrativoImperial.Portal > appsettings.json
   4.2 - Create a new database in SQL SERVER
   4.3 - Modify the value to "CONNECTION_STRING" and "CONNECTION_STRING_DEBUG"
+  4.4 - Select all items in: Migration > Scripts. Right click, select "Properties", under "Build Action" select "Embedded Resource"
 
 # 5. Run the application
 
